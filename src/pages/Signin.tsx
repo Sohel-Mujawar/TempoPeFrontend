@@ -142,7 +142,7 @@ const SignIn: React.FC = () => {
           <button
             type="submit"
             disabled={isPending}
-            className="bg-l-red-600 w-full rounded-lg border border-x-black bg-slate-800 py-3 text-sm font-medium text-white transition hover:bg-opacity-90 disabled:cursor-not-allowed disabled:opacity-70 sm:text-base"
+            className="bg-l-red-600 w-full rounded-lg border border-x-black bg-teal-800 py-3 text-sm font-medium text-white transition hover:bg-opacity-90 disabled:cursor-not-allowed disabled:opacity-70 sm:text-base"
           >
             {isPending ? (
               <div className="flex items-center justify-center gap-2">

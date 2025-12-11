@@ -4,6 +4,7 @@ import {FormProvider, useForm} from 'react-hook-form';
 import {MdLocationPin, MdLocationOn} from 'react-icons/md';
 import sideimage from '@/assets/images/truck/sideimage.png';
 import ChooseCity from '@/common/ChooseCity';
+import {useNavigate} from '@tanstack/react-router';
 
 const PickupAndDrop = () => {
   const [cityModal, setCityModal] = useState(false);
@@ -15,6 +16,7 @@ const PickupAndDrop = () => {
       drop: '',
     },
   });
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log('Form submitted:', data);
@@ -86,7 +88,8 @@ const PickupAndDrop = () => {
             />
 
             <button
-              type="submit"
+              type="button"
+              onClick={() => navigate({to: `/booking/service`})}
               className="focus:ring-gray-300 w-full rounded-lg bg-teal-900 px-4 py-3 font-semibold text-white shadow-md transition-all hover:bg-teal-800 focus:ring-2"
             >
               Get An Estimate

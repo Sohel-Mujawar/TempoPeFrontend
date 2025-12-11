@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {FormProvider, useForm} from 'react-hook-form';
-import GenericSelectButton from '../Forms/GenericSelectButton/GenericSelectButton';
+import GenericSelectButton from '../../Forms/GenericSelectButton/GenericSelectButton';
+import {useNavigate} from '@tanstack/react-router';
 
 const SelectService = () => {
   const methods = useForm();
@@ -8,6 +9,7 @@ const SelectService = () => {
     'business' | 'personal' | null
   >(null);
 
+  const navigate = useNavigate();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
     console.log(data);
@@ -43,6 +45,7 @@ const SelectService = () => {
               onClick={() => {
                 setSelectedService('personal');
                 methods.setValue('serviceType', 'personal');
+                navigate({to: `/booking/loadservice`});
               }}
             />
           </div>
